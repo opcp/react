@@ -8,7 +8,6 @@ class App extends React.Component {
       add: 456,
     }
   }
-  
   handle_click = value => {
     this.setState({
       total: this.state.total + value,
