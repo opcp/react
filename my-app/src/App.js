@@ -8,7 +8,7 @@ class App extends React.Component {
       add: 456,
     }
   }
-  handle_click = value => {
+  handle_click = value => () => {
     this.setState({
       total: this.state.total + value,
     })
@@ -17,9 +17,9 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <button onClick={() => this.handle_click(1)}>+</button>
+        <button onClick={this.handle_click(1)}>+</button>
         <h1>{this.state.total}</h1>
-        <button onClick={() => this.handle_click(-1)}>-</button>
+        <button onClick={this.handle_click(-1)}>-</button>
       </>
     )
   }
