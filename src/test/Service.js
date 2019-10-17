@@ -14,9 +14,9 @@ class Service extends Component {
                 <div>
                     <input 
                     value={this.state.inputValue} 
-                    onChange={this.inputChange.bind(this)}
+                    onChange={this.inputChange}
                     /> 
-                    <button onClick={this.addList.bind(this)}> 增加服務</button>
+                    <button onClick={this.addList}> 增加服務</button>
 
                 </div>
                 <ul>
@@ -31,13 +31,13 @@ class Service extends Component {
         );
     }
 
-    inputChange(e){
+    inputChange=(e)=>{
         this.setState({
             inputValue:e.target.value
         })
     }
 
-    addList(){
+    addList=()=>{
         this.setState({
             list:[...this.state.list,this.state.inputValue],
             inputValue:''
