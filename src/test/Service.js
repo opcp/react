@@ -5,10 +5,7 @@ class Service extends Component {
         super(props);
         this.state = {
             inputValue: '',
-            list: [
-            {id: 1, text:'buy iphone 11'},
-            {id: 2, text:'learn react'},
-        ]
+            list: ['腳底按摩','指壓']
         };
     }
     render() {
@@ -19,13 +16,13 @@ class Service extends Component {
                     value={this.state.inputValue} 
                     onChange={this.inputChange.bind(this)}
                     /> 
-                    <button onClick={this.addList.bind(this)}>增加服務</button>
+                    <button onClick={this.addList.bind(this)}> 增加服務</button>
 
                 </div>
                 <ul>
                     {
                         this.state.list.map((item,index)=>{
-                            return <li key={item.id}> {item.text} </li>
+                            return <li key={index+item}>{item}</li>
                         })
                     }
                 </ul>
