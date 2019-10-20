@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
-import App from './App';
-import Service from './hooks/useeffect'
+// import App from './App';
+import Service from './App'
 
 // import BootstrapTest from './bootstrap/BootstrapTest'
 
