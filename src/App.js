@@ -1,4 +1,4 @@
-import React, { useState , useMemo } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -6,35 +6,23 @@ import {
   Link,
   Switch,
 } from 'react-router-dom'
-import Home from './useContext/Home'
-import News from './useContext/News'
-import Contact from './useContext/Contact'
-import Navbar from './components/Navbar'
-import {UserContext} from './UserContext' 
+import Home from './data/pages/Home'
+import Student from './data/pages/Student'
 
 const App = () => {
-  const [user,setUser] =useState(null)
-
-  const value = useMemo(()=>({user,setUser}),[user,setUser])
-
-  const userStatus = '登入成功'
   return (
     <Router>
       <>
-        <Navbar />
-
-        
-          <UserContext.Provider value={value}>
-            <Route exact path="/" component={Home} />
-            <Route
-              path="/News"
-              component={News}
-            />
-            <Route
-              path="/Contact"
-              component={Contact} />
-          </UserContext.Provider>
-       
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/student">Student</Link>
+          </li>
+        </ul>
+        <Route exact path="/" component={Home} />
+        <Route path="/student/:id?" component={Student} />
       </>
     </Router>
   )
