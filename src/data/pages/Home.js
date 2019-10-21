@@ -1,5 +1,5 @@
 import React from 'react'
-import { data } from '../index'
+import Data from '../index'
 import { BrowserRouter as Router, Route, Link, NavLink, Switch } from "react-router-dom"
 import PathNow from '../../components/PathNow'
 
@@ -9,7 +9,7 @@ function Home() {
         <PathNow />
             <h1>Home</h1>
             <div className="list-group">
-                {data.map((item,value)=>{
+                {Data.map((item,value)=>{
                     return(
                         <Link
                         key={item+value}

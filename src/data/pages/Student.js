@@ -5,7 +5,7 @@ import {
     Route,
     useParams
   } from "react-router-dom";
-import { data } from '..';
+import Data from '../index';
 import PathNow from '../../components/PathNow'
 
 function Student(props) {
@@ -13,13 +13,13 @@ function Student(props) {
     let StudentData = null
     
 
-    for(let i = 0; i<data.length;i++){
-        if(data[i].id == props.match.params.id){
-            StudentData=data[i]
+    for(let i = 0; i<Data.length;i++){
+        if(Data[i].id == props.match.params.id){
+            StudentData=Data[i]
         }
     }
 
-    const StudentData2 = data.find(value=>value.id == props.match.params.id)
+    const StudentData2 = Data.find(value=>value.id == props.match.params.id)
 
     if(!StudentData2){
         return (
@@ -34,7 +34,7 @@ function Student(props) {
     return (
         <>
         <PathNow />
-            <h1>學生詳細資料</h1>
+            <h1>學生資料</h1>
             {/* 用props.match.params物件得到網址參數 */}
             <div className="card" style={{'width': '18rem'}}>
                 <div className="card-header">

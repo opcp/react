@@ -1,4 +1,4 @@
-const data = [
+const Data = [
     { id: 107001, name: '張佳蓉', birth: 990101 },
     { id: 107002, name: '楊智云', birth: 981211 },
     { id: 107003, name: '陳語合', birth: 990214 },
@@ -22,5 +22,5 @@ const data = [
     { id: 107021, name: '蔡睿斌', birth: 990316 },
   ]
   
-  export { data }
+  export default Data 
   
