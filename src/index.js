@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
+import React, { Component } from 'react'
+import ReactDom from 'react-dom'
 // import App from './App';
-import Service from './App'
+import Service from './App Service'
 
 // import BootstrapTest from './bootstrap/BootstrapTest'
 
 // ReactDom.render(<App />,document.getElementById('root'))
 
-ReactDom.render(<Service />,document.getElementById('root'))
-
+ReactDom.render(<Service />, document.getElementById('root'))

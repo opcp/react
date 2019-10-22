@@ -1,5 +1,5 @@
 import React from 'react'
-import Service from './test/Service'
+import Service from './test/Service copy'
 import {
   BrowserRouter as Router,
   Route,
@@ -31,9 +31,9 @@ import Student from './data/pages/Student'
 
 const App = () => {
   return (
-      <>   
+    <>
       <Service />
-      </>
+    </>
   )
 }
 export default App

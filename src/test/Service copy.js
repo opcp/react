@@ -9,22 +9,23 @@ class Service extends Component {
     this.state = {
       inputValue: '',
       list: ['腳底按摩', '指壓'],
-      data:[]
+      datas: [],
     }
   }
 
-  componentDidMount(){
-    axios.get('http://localhost:3000/try_promise')
-    .then((res)=>{
-      console.log(JSON.stringify(res))
-    })
-    .then((results)=>{
-      this.setState({data:results})
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  
+  componentDidMount() {
+    axios
+      .get('http://localhost:3000/try_promise')
+      .then(res => {
+        this.setState({ data: res.datas })
+        console.log(JSON.stringify(res))
+      })
+      // .then(results => {
+      //   this.setState({ data: results.data })
+      // })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   // componentWillMount() {
@@ -46,36 +47,16 @@ class Service extends Component {
   // }
 
   render() {
-    const { data } = this.state
     // console.log('render----掛載中')
     return (
       <>
-        {/* {data.map(datas=><div>{datas.sid}</div>)} */}
+        <ul>
+          {this.state.datas.map(data => (
+            <li>{data.name}</li>
+          ))}
+        </ul>
       </>
     )
-  }
-  deleteItem = (index) => {
-    console.log(index)
-    let list = this.state.list
-    list.splice(index, 1)
-    this.setState({
-      list: list,
-    })
-  }
-
-  inputChange = e => {
-    this.setState({
-      inputValue: this.input.value
-    })
-  }
-
-  addList = () => {
-    this.setState({
-      list: [...this.state.list, this.state.inputValue],
-      inputValue: '',
-    }, () => {
-      console.log(this.ul.querySelectorAll('li').length)
-    })
   }
 }
 

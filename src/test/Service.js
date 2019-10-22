@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react'
 import Service_item from './Service_item'
 import axios from 'axios'
@@ -12,15 +13,17 @@ class Service extends Component {
     }
   }
 
-  componentDidMount(){
-    axios.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-8C8C51C2-A1D2-425B-B66D-2139BFD950DE&parameterName=%E5%9F%BA%E9%9A%86%E5%B8%82')
-    .then((res)=>{
-      console.log(JSON.stringify(res))
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  
+  componentDidMount() {
+    axios
+      .get(
+        'https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWB-8C8C51C2-A1D2-425B-B66D-2139BFD950DE&parameterName=%E5%9F%BA%E9%9A%86%E5%B8%82'
+      )
+      .then(res => {
+        console.log(JSON.stringify(res))
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 
   // componentWillMount() {
@@ -47,13 +50,19 @@ class Service extends Component {
       <>
         <div>
           <input
-            value={this.state.inputValue} 
+            value={this.state.inputValue}
             onChange={this.inputChange}
-            ref={(input) => { this.input = input }}
+            ref={input => {
+              this.input = input
+            }}
           />
           <button onClick={this.addList}> 增加服務</button>
         </div>
-        <ul ref={(ul) => { this.ul = ul }}>
+        <ul
+          ref={ul => {
+            this.ul = ul
+          }}
+        >
           {this.state.list.map((item, index) => {
             return (
               <Service_item
@@ -69,7 +78,7 @@ class Service extends Component {
       </>
     )
   }
-  deleteItem = (index) => {
+  deleteItem = index => {
     console.log(index)
     let list = this.state.list
     list.splice(index, 1)
@@ -80,17 +89,20 @@ class Service extends Component {
 
   inputChange = e => {
     this.setState({
-      inputValue: this.input.value
+      inputValue: this.input.value,
     })
   }
 
   addList = () => {
-    this.setState({
-      list: [...this.state.list, this.state.inputValue],
-      inputValue: '',
-    }, () => {
-      console.log(this.ul.querySelectorAll('li').length)
-    })
+    this.setState(
+      {
+        list: [...this.state.list, this.state.inputValue],
+        inputValue: '',
+      },
+      () => {
+        console.log(this.ul.querySelectorAll('li').length)
+      }
+    )
   }
 }
 
