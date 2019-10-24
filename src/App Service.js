@@ -1,5 +1,7 @@
 import React from 'react'
-import Service from './test/Service'
+// import Service from './test/Service'
+import styled from '@emotion/styled';
+import Imgs from './images/123.jpg'
 import {
   BrowserRouter as Router,
   Route,
@@ -9,6 +11,19 @@ import {
 } from 'react-router-dom'
 import Home from './data/pages/Home'
 import Student from './data/pages/Student'
+
+const Box = styled.div`
+  display:flex;
+`;
+
+
+
+const Container = styled.div`
+  display:flex;
+  border:2px solid #ace;
+  width: 100px;
+  height: 100px;
+`;
 
 // const App = () => {
 //   return (
@@ -30,10 +45,22 @@ import Student from './data/pages/Student'
 // }
 
 const App = () => {
+  let link = '123'
   return (
-      <>   
-      <Service />
+    <Router>
+      <> 
+      <Link to="/{link}">
+      <img sec={Imgs}/>
+      <Box>
+      <Container/>
+      <Container/>
+      <Container/>
+      <Container/>
+      <Container/>
+      </Box>
+      </Link> 
       </>
+      </Router>
   )
 }
 export default App
