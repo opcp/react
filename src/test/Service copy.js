@@ -9,11 +9,16 @@ class Service extends Component {
     this.state = {
       inputValue: '',
       list: ['腳底按摩', '指壓'],
+<<<<<<< HEAD
       data: []
+=======
+      datas: [],
+>>>>>>> c0598e6f917d9cf151ab30165b572763f872fd37
     }
   }
 
   componentDidMount() {
+<<<<<<< HEAD
     axios.post('http://localhost:3000/try_promise')
       .then((res) => {
         this.setState({data: res.data.rows})
@@ -27,6 +32,20 @@ class Service extends Component {
         console.log(error)
       })
 
+=======
+    axios
+      .get('http://localhost:3000/try_promise')
+      .then(res => {
+        this.setState({ data: res.datas })
+        console.log(JSON.stringify(res))
+      })
+      // .then(results => {
+      //   this.setState({ data: results.data })
+      // })
+      .catch(error => {
+        console.log(error)
+      })
+>>>>>>> c0598e6f917d9cf151ab30165b572763f872fd37
   }
 
   // componentWillMount() {
@@ -51,7 +70,15 @@ class Service extends Component {
     // console.log('render----掛載中')
     return (
       <>
+<<<<<<< HEAD
         {this.state.data.map(datas => <div>{datas.sid}{datas.name}</div>)}
+=======
+        <ul>
+          {this.state.datas.map(data => (
+            <li>{data.name}</li>
+          ))}
+        </ul>
+>>>>>>> c0598e6f917d9cf151ab30165b572763f872fd37
       </>
     )
   }

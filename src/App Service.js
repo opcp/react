@@ -1,7 +1,11 @@
 import React from 'react'
+<<<<<<< HEAD:src/App Service.js
 // import Service from './test/Service'
 import styled from '@emotion/styled';
 import Imgs from './images/123.jpg'
+=======
+import Service from './test/Service copy'
+>>>>>>> c0598e6f917d9cf151ab30165b572763f872fd37:src/App Servive.js
 import {
   BrowserRouter as Router,
   Route,
@@ -47,6 +51,7 @@ const Container = styled.div`
 const App = () => {
   let link = '123'
   return (
+<<<<<<< HEAD:src/App Service.js
     <Router>
       <> 
       <Link to="/{link}">
@@ -61,6 +66,11 @@ const App = () => {
       </Link> 
       </>
       </Router>
+=======
+    <>
+      <Service />
+    </>
+>>>>>>> c0598e6f917d9cf151ab30165b572763f872fd37:src/App Servive.js
   )
 }
 export default App
